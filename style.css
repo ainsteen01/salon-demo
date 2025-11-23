@@ -1,0 +1,435 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: hsl(0, 0%, 10%);
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+html{
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+.nav-bar{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    top:0;
+    width:100%;
+    height: 60px;
+    z-index: 1000;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    box-shadow: 0px 3px 10px black;
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    align-content: center;
+}
+.nav-links{
+    list-style: none;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+.nav-links > li > a{
+    text-decoration: none;
+    color: white;
+}
+.nav-links > li > a:hover{
+    color: rgb(174, 0, 255);
+    transition: 0.5s ease-in-out;
+}
+.mobile-nav-bar{
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    top:0;
+    right:0;
+    width:40%;
+    height: 100vh;
+    z-index: 2000;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    box-shadow: 0px 3px 10px black;
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    align-content: center;
+}
+.mobile-nav-links{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+}
+.mobile-nav-links > li{
+    margin: 30px;
+    width: 100%;
+    font-size: 1.5rem;
+}
+.mobile-nav-links > li > a{
+    text-decoration: none;
+    color: white;
+}
+.mobile-nav-links > li > a:hover{
+    color: rgb(174, 0, 255);
+    transition: 0.5s ease-in-out;
+}
+.mobile-menu-btn{
+    display: none;
+    width: 60px;
+    height: 60px;
+    background: url(Images/Hamburger_Menu.png);
+    background-size: contain;
+    background-position: center;
+    margin-right: 15px;
+}
+.logo{
+    width: fit-content;
+    color: rgb(174, 0, 255);
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+    align-self:center;
+    font-size: 2rem;
+    padding: 10px;
+    margin-right: auto;
+}
+.logo::before{
+    content: '';
+    justify-self: center;
+    display: inline-block;
+    background: url(Images/Logo.png);
+    height: 60px;
+    width: 60px;
+    background-size: contain;
+    background-position: center;
+    vertical-align: middle;
+}
+.hero{
+    scroll-snap-align: start;
+    width:100%;
+    height: 100vh;
+    align-content: center;
+    justify-items: center;
+    background:url(Images/Hero_Bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.hero-card{
+    display: flexbox;
+    flex-direction: column;
+    background-color: rgba(92, 12, 168, 0.5);
+    max-width: 1000px;
+    width:90%;
+    height: 60vh;
+    text-align: center;
+    justify-items: center;
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    transform: translateY(0%);
+    transition: background-color 1.5s ease-in-out, transform 1.5s ease-in-out;
+    align-content: center;
+}
+.hero-card > h1{
+    font-size: 2rem;
+}
+.hero-card > p{
+    font-size: 1.2rem;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+.hero-card > a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(1, 1, 175);
+    transform: translateY(0%);
+    transition: 0.5s ease;
+}
+.hero-card > a:hover{
+    background-color: rgb(0, 0, 255);
+    box-shadow: 0px 1px 5px black;
+    transform: translateY(-10%);
+}
+.hero-card:hover{
+    background-color: rgba(132, 0, 255, 0.5);
+    transform: translateY(-1%);
+}
+.about{
+    scroll-snap-align: start;
+    width:100%;
+    height: 100vh;
+    align-content: center;
+    justify-items: center;
+    background: url(Images/About_Bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.about-card{
+    display: flexbox;
+    flex-direction: column;
+    background-color: rgba(106, 105, 105, 0.5);
+    max-width: 1000px;
+    width:90%;
+    height: 70vh;
+    text-align: center;
+    justify-items: center;
+    color: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 20px;
+    transform: translateY(0%);
+    transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    align-content: center;
+}
+.about-card:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: translateY(-1%);
+}
+.about-card > h1 {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-style: solid;
+  text-underline-offset: 4px;
+}
+.about-card > p{
+    font-size: 1.5rem;
+    padding: 10px;
+}
+.about-card > img{
+    height: 20vh;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px black ;
+}
+.services{
+    scroll-snap-align: start;
+    width:100%;
+    align-content: center;
+    justify-items: center;
+    background-color: rgb(40, 40, 40);
+    background: url(Images/Services_Bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.services-card{
+    display: flexbox;
+    flex-direction: column;
+    width:90%;
+    text-align: center;
+    justify-items: center;
+    color: violet;
+    padding: 30px;
+    border-radius: 20px;
+    transform: translateY(0%);
+    transition: background-color 1.5s ease-in-out, transform 1.5s ease-in-out;
+    align-content: center;
+}
+.services-card:hover{
+    transform: translateY(-1%);
+}
+.sub-service{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+.service{
+    width: 200px;
+    height: 200px;
+    color: orange;
+    font-family:cursive;
+    background-color: rgba(80, 80, 80, 0.499);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    box-shadow: 0px 1px 5px black;
+    margin:20px 20px;
+    padding: 10px;
+    transition: background-color 1.5s ease-in-out, transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+.service:hover{
+    transform: translateY(-5%);
+    background-color: rgb(86, 86, 86);
+    box-shadow: 0px 2px 10px black;
+}
+.service > p{
+    color: white;
+}
+.gallery{
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:100%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+}
+.images{
+    border-radius: 50%;
+    border:2px solid white;
+    height: 50vh;
+    min-width: auto;
+    width: 50vh;
+    margin: 20px;
+}
+#img1{
+    background: url(Images/Img1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+#img2{
+    background: url(Images/Img2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+#img3{
+    background: url(Images/Img3.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+#img4{
+    background: url(Images/Img4.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+.contact{
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    height: 100vh;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    background: url(Images/Contact_Bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.contact-details{
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    width: 100%;
+    justify-content: flex-end;
+    color: white;
+    font-size: 1.5rem;
+    padding: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: 2px 2px 5px black;
+}
+hr{
+    border: none;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    margin: 0 10px;
+    width:50%;
+}
+i.fab{
+    display: inline;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.form-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: right;
+    align-content: right;
+    justify-self: right;
+}
+input{
+    width:50%;
+    padding:15px;
+    font-size: 1rem;
+    margin: 20px;
+    border-radius: 20px;
+}
+#book-btn{
+    width: 400px;
+    background-color: rgba(137, 43, 226, 0.6);
+    color: white;
+    font-weight: bold;
+    align-self: center;
+    justify-self: center;
+    border: none;
+    transition: all 0.7s ease-in-out;
+}
+#book-btn:hover{
+    background-color: rgba(170, 80, 255, 0.605);
+    transform: translateY(-10%);
+    box-shadow: 0px 2px 10px rgb(0, 0, 0);
+}
+.footer-bar{
+    position: fixed;
+    bottom: 0px;
+    width:100%;
+    height: 50px;
+    z-index: 1000;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    display: flex;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-content: center;
+}
+@media(max-width:750px){
+    .nav-links{
+        display: none;
+    }
+    .mobile-menu-btn{
+        display: inline;
+    }
+    .about-card > img{
+        width:50vw;
+        border-radius: 50%;
+        box-shadow: 2px 2px 5px black ;
+    }
+    .images{
+        border-radius: 50%;
+        border:2px solid white;
+        height: 50vw;
+        width:  50vw;
+        min-width: auto;
+        margin: 20px;
+    }
+    #book-btn{
+        width: 40%;
+    }
+    .contact{
+    display: flex;
+    flex-direction: column;
+    }
+    .contact-details{
+        text-align: center;
+        width: 70%;
+    }
+    hr{
+        display: none;
+    }
+    .form-container{
+        text-align: center;
+        height: auto;
+    }
+}
