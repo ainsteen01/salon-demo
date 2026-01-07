@@ -4,79 +4,91 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===== MOBILE MENU TOGGLE =====
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
+    const body = document.body;
     
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
     });
     
     // Close mobile menu when clicking links
-    document.querySelectorAll('.nav-link').forEach(link => {
+    document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
-            document.body.style.overflow = '';
+            body.style.overflow = '';
         });
     });
     
     // ===== STICKY NAVBAR =====
     const navbar = document.querySelector('.navbar');
+    const header = document.querySelector('.header');
     
     window.addEventListener('scroll', () => {
         if (window.scrollY > 100) {
             navbar.classList.add('scrolled');
+            header.style.backdropFilter = 'blur(10px)';
         } else {
             navbar.classList.remove('scrolled');
+            header.style.backdropFilter = 'none';
         }
     });
     
     // ===== ACTIVE NAV LINK ON SCROLL =====
     const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
     
-    window.addEventListener('scroll', () => {
+    function setActiveLink() {
         let current = '';
         sections.forEach(section => {
-            const sectionTop = section.offsetTop;
+            const sectionTop = section.offsetTop - 100;
             const sectionHeight = section.clientHeight;
-            if (scrollY >= (sectionTop - 200)) {
+            if (scrollY >= sectionTop) {
                 current = section.getAttribute('id');
             }
         });
         
-        document.querySelectorAll('.nav-link').forEach(link => {
+        navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${current}`) {
                 link.classList.add('active');
             }
         });
-    });
+    }
     
-    // ===== MENU FILTERING =====
-    const categoryButtons = document.querySelectorAll('.category-btn');
-    const menuItems = document.querySelectorAll('.menu-item');
+    window.addEventListener('scroll', setActiveLink);
     
-    categoryButtons.forEach(button => {
-        button.addEventListener('click', () => {
+    // ===== SERVICES FILTERING =====
+    const categoryBtns = document.querySelectorAll('.category');
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    categoryBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
             // Remove active class from all buttons
-            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            categoryBtns.forEach(b => b.classList.remove('active'));
             // Add active class to clicked button
-            button.classList.add('active');
+            btn.classList.add('active');
             
-            const filter = button.getAttribute('data-category');
+            const filter = btn.getAttribute('data-category');
             
-            menuItems.forEach(item => {
-                if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                    item.style.display = 'block';
+            serviceCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                
+                if (filter === 'hair' || cardCategory === filter) {
+                    card.classList.remove('hidden');
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    
                     setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
                     }, 10);
                 } else {
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(20px)';
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
                     setTimeout(() => {
-                        item.style.display = 'none';
+                        card.classList.add('hidden');
                     }, 300);
                 }
             });
@@ -84,25 +96,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ===== FORM VALIDATION & SUBMISSION =====
-    const bookingForm = document.getElementById('bookingForm');
+    const appointmentForm = document.getElementById('appointmentForm');
     const newsletterForm = document.querySelector('.newsletter-form');
     
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', (e) => {
+    if (appointmentForm) {
+        appointmentForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
             // Get form data
-            const formData = new FormData(bookingForm);
+            const formData = new FormData(appointmentForm);
             const data = Object.fromEntries(formData);
             
             // Simple validation
             let isValid = true;
-            bookingForm.querySelectorAll('[required]').forEach(input => {
+            appointmentForm.querySelectorAll('[required]').forEach(input => {
                 if (!input.value.trim()) {
                     isValid = false;
                     input.style.borderColor = '#e74c3c';
                 } else {
-                    input.style.borderColor = '';
+                    input.style.borderColor = 'rgba(212, 175, 55, 0.2)';
                 }
             });
             
@@ -112,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             // Show loading state
-            const submitBtn = bookingForm.querySelector('button[type="submit"]');
+            const submitBtn = appointmentForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
             submitBtn.disabled = true;
@@ -120,17 +132,17 @@ document.addEventListener('DOMContentLoaded', function() {
             // Simulate API call
             setTimeout(() => {
                 // Reset form
-                bookingForm.reset();
+                appointmentForm.reset();
                 
                 // Reset button
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
                 
                 // Show success message
-                showNotification('Table booked successfully! We will confirm via email.', 'success');
+                showNotification('Appointment booked successfully! We will confirm via call/SMS.', 'success');
                 
                 // Log data (in real app, send to server)
-                console.log('Booking Data:', data);
+                console.log('Appointment Data:', data);
             }, 2000);
         });
     }
@@ -148,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             emailInput.value = '';
-            showNotification('Thank you for subscribing!', 'success');
+            showNotification('Thank you for subscribing! Check your email for exclusive offers.', 'success');
         });
     }
     
@@ -195,20 +207,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ===== SCROLL REVEAL ANIMATIONS =====
-    const revealElements = document.querySelectorAll('.fade-in');
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                entry.target.classList.add('animated');
             }
         });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
+    }, observerOptions);
     
-    revealElements.forEach(el => observer.observe(el));
+    // Observe all sections and cards
+    document.querySelectorAll('section, .service-card, .info-card, .gallery-item').forEach(el => {
+        observer.observe(el);
+    });
     
     // ===== BACK TO TOP BUTTON =====
     const backToTop = document.querySelector('.back-to-top');
@@ -237,7 +252,8 @@ document.addEventListener('DOMContentLoaded', function() {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
-                    img.src = img.dataset.src || img.src;
+                    const src = img.getAttribute('data-src') || img.src;
+                    img.src = src;
                     imageObserver.unobserve(img);
                 }
             });
@@ -246,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function() {
         images.forEach(img => imageObserver.observe(img));
     }
     
-    // ===== FORM INPUT ANIMATIONS =====
+    // ===== FORM INPUT ENHANCEMENTS =====
     const formInputs = document.querySelectorAll('.form-group input, .form-group select, .form-group textarea');
     
     formInputs.forEach(input => {
@@ -267,60 +283,46 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // ===== SET MIN DATE FOR RESERVATION =====
+    // ===== SET MIN DATE FOR APPOINTMENT =====
     const dateInput = document.querySelector('input[type="date"]');
     if (dateInput) {
-        const today = new Date().toISOString().split('T')[0];
-        dateInput.min = today;
-        
-        // Set default to tomorrow
-        const tomorrow = new Date();
+        const today = new Date();
+        const tomorrow = new Date(today);
         tomorrow.setDate(tomorrow.getDate() + 1);
-        dateInput.value = tomorrow.toISOString().split('T')[0];
-    }
-    
-    // ===== HERO TEXT ANIMATION =====
-    const heroTitle = document.querySelector('.hero-title');
-    const heroSubtitle = document.querySelector('.hero-subtitle');
-    const heroButtons = document.querySelector('.hero-buttons');
-    const heroFeatures = document.querySelector('.hero-features');
-    
-    // Trigger animations on load
-    setTimeout(() => {
-        heroTitle?.classList.add('animate');
-        heroSubtitle?.classList.add('animate');
-        heroButtons?.classList.add('animate');
-        heroFeatures?.classList.add('animate');
-    }, 500);
-    
-    // ===== COUNTER ANIMATION FOR STATS =====
-    const stats = document.querySelectorAll('.stat h4');
-    
-    const countUp = (element, target) => {
-        let current = 0;
-        const increment = target / 100;
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
-            element.textContent = Math.floor(current) + (element.textContent.includes('%') ? '%' : '+');
-        }, 20);
-    };
-    
-    const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const stat = entry.target;
-                const target = parseInt(stat.textContent) || 0;
-                countUp(stat, target);
-                statsObserver.unobserve(stat);
+        
+        // Format date as YYYY-MM-DD
+        const formatDate = (date) => {
+            return date.toISOString().split('T')[0];
+        };
+        
+        dateInput.min = formatDate(tomorrow);
+        dateInput.value = formatDate(tomorrow);
+        
+        // Disable weekends
+        dateInput.addEventListener('change', function() {
+            const selectedDate = new Date(this.value);
+            const day = selectedDate.getDay();
+            
+            if (day === 0 || day === 6) { // Sunday or Saturday
+                showNotification('Weekend appointments require advance booking. Please call us.', 'warning');
+                this.value = formatDate(tomorrow);
             }
         });
-    }, { threshold: 0.5 });
+    }
     
-    stats.forEach(stat => statsObserver.observe(stat));
+    // ===== HERO ANIMATIONS =====
+    const heroElements = document.querySelectorAll('.hero-badge, .hero-title, .hero-subtitle, .hero-actions, .hero-features');
+    
+    heroElements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        }, index * 200);
+    });
     
     // ===== ADD NOTIFICATION STYLES =====
     const style = document.createElement('style');
@@ -330,8 +332,8 @@ document.addEventListener('DOMContentLoaded', function() {
             top: 20px;
             right: 20px;
             padding: 16px 24px;
-            background: var(--secondary);
-            color: white;
+            background: var(--secondary-light);
+            color: var(--text-primary);
             border-radius: var(--radius);
             box-shadow: var(--shadow-lg);
             display: flex;
@@ -341,6 +343,8 @@ document.addEventListener('DOMContentLoaded', function() {
             transition: transform 0.3s ease;
             z-index: 9999;
             max-width: 400px;
+            border-left: 4px solid var(--primary);
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
         
         .notification.show {
@@ -348,15 +352,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         .notification.success {
-            background: #27ae60;
+            border-left-color: #27ae60;
         }
         
         .notification.error {
-            background: #e74c3c;
+            border-left-color: #e74c3c;
         }
         
         .notification.warning {
-            background: #f39c12;
+            border-left-color: #f39c12;
         }
         
         .notification i {
@@ -366,20 +370,41 @@ document.addEventListener('DOMContentLoaded', function() {
         .notification-close {
             background: none;
             border: none;
-            color: white;
+            color: var(--text-secondary);
             cursor: pointer;
             padding: 4px;
             margin-left: auto;
+            transition: var(--transition);
         }
         
-        .form-group.focused i {
+        .notification-close:hover {
             color: var(--primary);
+        }
+        
+        .form-group.focused .input-icon {
+            color: var(--primary-light);
         }
         
         .form-group.focused input,
         .form-group.focused select,
         .form-group.focused textarea {
             border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .animated {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     `;
     document.head.appendChild(style);
@@ -390,8 +415,47 @@ document.addEventListener('DOMContentLoaded', function() {
         return re.test(email);
     }
     
+    // Initialize counter animation for experience badge
+    const expBadge = document.querySelector('.experience-badge span');
+    if (expBadge) {
+        let count = 0;
+        const target = parseInt(expBadge.textContent);
+        const interval = setInterval(() => {
+            count++;
+            expBadge.textContent = count + '+';
+            if (count >= target) {
+                clearInterval(interval);
+            }
+        }, 100);
+    }
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            if (href === '#') return;
+            
+            const targetElement = document.querySelector(href);
+            if (targetElement) {
+                e.preventDefault();
+                
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = targetElement.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
     // Initialize on load
     setTimeout(() => {
-        console.log('Nexus Restaurant website loaded successfully!');
-    }, 1000);
+        console.log('Trim & Trend Premium Salon website loaded successfully!');
+        
+        // Add loaded class to body for CSS animations
+        document.body.classList.add('loaded');
+    }, 100);
 });

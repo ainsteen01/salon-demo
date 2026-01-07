@@ -3,81 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus Restaurant | Modern Fine Dining</title>
-    <meta name="description" content="Experience sophisticated dining at Nexus Restaurant. Modern cuisine with elegant ambiance.">
-    <meta name="keywords" content="fine dining, restaurant, gourmet, modern cuisine">
-    <meta name="author" content="Nexus Restaurant">
+    <title>Trim & Trend | Premium Salon Experience</title>
+    <meta name="description" content="Premium salon offering sophisticated hairstyling, advanced treatments, and personalized grooming services in an elegant atmosphere.">
+    <meta name="keywords" content="premium salon, haircuts, hair coloring, keratin treatment, bridal styling, luxury grooming">
+    <meta name="author" content="Trim & Trend">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/48/000000/restaurant-.png">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✂️</text></svg>">
     
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">
-                <i class="fas fa-utensils"></i>
-                <span>Nexus</span>
-            </a>
-            
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#menu" class="nav-link">Menu</a></li>
-                <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                <li><a href="#reservation" class="nav-link">Reservation</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><a href="#reservation" class="nav-btn">Book Table</a></li>
-            </ul>
-            
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#hero" class="logo">
+                    <span class="logo-icon">✂️</span>
+                    <span class="logo-text">Trim & <span class="logo-accent">Trend</span></span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li><a href="#hero" class="nav-link active">HOME</a></li>
+                    <li><a href="#about" class="nav-link">ABOUT</a></li>
+                    <li><a href="#services" class="nav-link">SERVICES</a></li>
+                    <li><a href="#gallery" class="nav-link">GALLERY</a></li>
+                    <li><a href="#contact" class="nav-link">CONTACT</a></li>
+                    <li><a href="#contact" class="nav-cta">BOOK NOW</a></li>
+                </ul>
+                
+                <button class="hamburger" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="hero" class="hero">
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Where Culinary Art Meets Elegance</h1>
-                <p class="hero-subtitle">Experience a symphony of flavors crafted by award-winning chefs in an atmosphere of refined luxury.</p>
-                <div class="hero-buttons">
-                    <a href="#menu" class="btn btn-primary">
-                        <i class="fas fa-book-open"></i> View Menu
+                <div class="hero-badge">PREMIUM SALON EXPERIENCE</div>
+                <h1 class="hero-title">Where Artistry Meets<br>Precision</h1>
+                <p class="hero-subtitle">Discover the perfect fusion of contemporary trends and timeless elegance in our sophisticated salon environment.</p>
+                
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-calendar-check"></i> Book Appointment
                     </a>
-                    <a href="#reservation" class="btn btn-secondary">
-                        <i class="fas fa-calendar-alt"></i> Reserve Now
+                    <a href="#services" class="btn btn-outline">
+                        <i class="fas fa-scissors"></i> View Services
                     </a>
                 </div>
                 
                 <div class="hero-features">
                     <div class="feature">
-                        <i class="fas fa-star"></i>
-                        <span>4.9/5 Google Reviews</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-wine-glass-alt"></i>
-                        <span>150+ Wine Selection</span>
-                    </div>
-                    <div class="feature">
                         <i class="fas fa-award"></i>
-                        <span>Award Winning</span>
+                        <span>Certified Stylists</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-star"></i>
+                        <span>Premium Products</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-clock"></i>
+                        <span>Flexible Hours</span>
                     </div>
                 </div>
             </div>
+        </div>
+        
+        <div class="hero-scroll">
+            <a href="#about" class="scroll-down">
+                <i class="fas fa-chevron-down"></i>
+            </a>
         </div>
     </section>
 
@@ -85,172 +94,182 @@
     <section id="about" class="section about">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Our Story</h2>
-                <p class="section-subtitle">Where tradition meets innovation</p>
+                <h2 class="section-title">Our Philosophy</h2>
+                <p class="section-subtitle">Crafting beauty with precision and passion</p>
             </div>
             
             <div class="about-content">
                 <div class="about-image">
-                    <div class="image-frame">
-                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80" alt="Restaurant Interior" loading="lazy">
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=1964&q=80" alt="Salon Interior" loading="lazy">
+                        <div class="image-overlay"></div>
                     </div>
                     <div class="experience-badge">
-                        <span>8+</span>
-                        <small>Years Experience</small>
+                        <span>5+</span>
+                        <small>Years of Excellence</small>
                     </div>
                 </div>
                 
                 <div class="about-text">
-                    <h3>Crafting Memorable Dining Experiences Since 2015</h3>
-                    <p>Nexus Restaurant was born from a passion for culinary excellence and a desire to create an unforgettable dining experience. Our philosophy blends traditional techniques with modern creativity.</p>
-                    <p>We source our ingredients from local farmers and trusted global suppliers who share our commitment to quality and sustainability. Each dish tells a story of craftsmanship and attention to detail.</p>
+                    <h3>Redefining Salon Excellence</h3>
+                    <p>At Trim & Trend, we transcend traditional hair styling by blending artistic vision with technical mastery. Our salon is a sanctuary where modern aesthetics meet personalized attention.</p>
                     
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h4>50+</h4>
-                            <p>Signature Dishes</p>
+                    <div class="about-highlights">
+                        <div class="highlight">
+                            <i class="fas fa-gem"></i>
+                            <div>
+                                <h4>Luxury Experience</h4>
+                                <p>Premium products and bespoke service in an elegant setting</p>
+                            </div>
                         </div>
-                        <div class="stat">
-                            <h4>12</h4>
-                            <p>Award Winning Chefs</p>
+                        
+                        <div class="highlight">
+                            <i class="fas fa-user-check"></i>
+                            <div>
+                                <h4>Expert Stylists</h4>
+                                <p>Continuously trained in latest techniques and trends</p>
+                            </div>
                         </div>
-                        <div class="stat">
-                            <h4>100%</h4>
-                            <p>Fresh Ingredients</p>
+                        
+                        <div class="highlight">
+                            <i class="fas fa-heart"></i>
+                            <div>
+                                <h4>Personalized Care</h4>
+                                <p>Tailored consultations for your unique style journey</p>
+                            </div>
                         </div>
                     </div>
                     
-                    <a href="#menu" class="btn btn-outline">
-                        <i class="fas fa-arrow-right"></i> Explore Our Menu
-                    </a>
+                    <blockquote class="about-quote">
+                        <p>"We don't just style hair—we craft confidence and enhance natural beauty."</p>
+                        <cite>- Master Stylist & Founder</cite>
+                    </blockquote>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Menu Section -->
-    <section id="menu" class="section menu">
+    <!-- Services Section -->
+    <section id="services" class="section services">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Our Menu</h2>
-                <p class="section-subtitle">Culinary masterpieces crafted with passion</p>
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive beauty treatments with precision and care</p>
             </div>
             
-            <div class="menu-categories">
-                <button class="category-btn active" data-category="all">All</button>
-                <button class="category-btn" data-category="starters">Starters</button>
-                <button class="category-btn" data-category="mains">Main Courses</button>
-                <button class="category-btn" data-category="desserts">Desserts</button>
-                <button class="category-btn" data-category="drinks">Drinks</button>
+            <div class="services-categories">
+                <div class="category active" data-category="hair">Hair Services</div>
+                <div class="category" data-category="treatments">Advanced Treatments</div>
+                <div class="category" data-category="specialty">Specialty Services</div>
             </div>
             
-            <div class="menu-grid">
-                <!-- Starters -->
-                <div class="menu-item" data-category="starters">
-                    <div class="menu-item-image">
-                        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Truffle Arancini" loading="lazy">
+            <div class="services-grid">
+                <!-- Hair Services -->
+                <div class="service-card active" data-category="hair">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
                     </div>
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <h4>Truffle Arancini</h4>
-                            <span class="price">₹850</span>
-                        </div>
-                        <p>Crispy saffron risotto balls filled with black truffle and mozzarella</p>
-                        <div class="menu-item-tags">
-                            <span class="tag vegetarian">Vegetarian</span>
-                            <span class="tag new">New</span>
-                        </div>
+                    <div class="service-content">
+                        <h3>Precision Haircuts</h3>
+                        <p>Tailored cuts for men, women, and children based on facial structure and lifestyle</p>
+                        <div class="service-price">Starting at ₹800</div>
                     </div>
                 </div>
                 
-                <div class="menu-item" data-category="starters">
-                    <div class="menu-item-image">
-                        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&auto=format&fit=crop&w=2080&q=80" alt="Seared Scallops" loading="lazy">
+                <div class="service-card active" data-category="hair">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
                     </div>
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <h4>Seared Scallops</h4>
-                            <span class="price">₹1200</span>
-                        </div>
-                        <p>Perfectly seared scallops with cauliflower purée and brown butter</p>
-                        <div class="menu-item-tags">
-                            <span class="tag chefs-choice">Chef's Choice</span>
-                        </div>
+                    <div class="service-content">
+                        <h3>Hair Coloring</h3>
+                        <p>Balayage, highlights, global color, and vivid fashion shades with premium products</p>
+                        <div class="service-price">Starting at ₹2,500</div>
                     </div>
                 </div>
                 
-                <!-- Main Courses -->
-                <div class="menu-item" data-category="mains">
-                    <div class="menu-item-image">
-                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2080&q=80" alt="Herb-Crusted Salmon" loading="lazy">
+                <div class="service-card active" data-category="hair">
+                    <div class="service-icon">
+                        <i class="fas fa-wind"></i>
                     </div>
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <h4>Herb-Crusted Salmon</h4>
-                            <span class="price">₹1850</span>
-                        </div>
-                        <p>Atlantic salmon with parmesan-herb crust and lemon beurre blanc</p>
-                        <div class="menu-item-tags">
-                            <span class="tag popular">Popular</span>
-                        </div>
+                    <div class="service-content">
+                        <h3>Styling & Blowouts</h3>
+                        <p>Red carpet ready styling for events or everyday sophistication</p>
+                        <div class="service-price">Starting at ₹1,200</div>
                     </div>
                 </div>
                 
-                <div class="menu-item" data-category="mains">
-                    <div class="menu-item-image">
-                        <img src="https://images.unsplash.com/photo-1481070555726-e2fe8357725c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2035&q=80" alt="Wagyu Beef" loading="lazy">
+                <!-- Advanced Treatments -->
+                <div class="service-card" data-category="treatments">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
                     </div>
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <h4>Wagyu Beef Tenderloin</h4>
-                            <span class="price">₹3500</span>
-                        </div>
-                        <p>Australian wagyu beef with truffle mashed potatoes</p>
-                        <div class="menu-item-tags">
-                            <span class="tag premium">Premium</span>
-                            <span class="tag new">New</span>
-                        </div>
+                    <div class="service-content">
+                        <h3>Keratin Smoothing</h3>
+                        <p>Professional smoothing treatment for frizz-free, shiny hair lasting up to 3 months</p>
+                        <div class="service-price">Starting at ₹5,000</div>
                     </div>
                 </div>
                 
-                <!-- Desserts -->
-                <div class="menu-item" data-category="desserts">
-                    <div class="menu-item-image">
-                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2080&q=80" alt="Chocolate Soufflé" loading="lazy">
+                <div class="service-card" data-category="treatments">
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
                     </div>
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <h4>Chocolate Soufflé</h4>
-                            <span class="price">₹650</span>
-                        </div>
-                        <p>Rich dark chocolate soufflé with vanilla bean ice cream</p>
-                        <div class="menu-item-tags">
-                            <span class="tag vegetarian">Vegetarian</span>
-                        </div>
+                    <div class="service-content">
+                        <h3>Olaplex Bond Repair</h3>
+                        <p>Revitalize damaged hair with our intensive bond building treatment</p>
+                        <div class="service-price">Starting at ₹3,500</div>
                     </div>
                 </div>
                 
-                <!-- Drinks -->
-                <div class="menu-item" data-category="drinks">
-                    <div class="menu-item-image">
-                        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2080&q=80" alt="Signature Cocktail" loading="lazy">
+                <div class="service-card" data-category="treatments">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
                     </div>
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <h4>Nexus Signature Cocktail</h4>
-                            <span class="price">₹750</span>
-                        </div>
-                        <p>House specialty with premium gin, elderflower, and fresh citrus</p>
-                        <div class="menu-item-tags">
-                            <span class="tag popular">Popular</span>
-                        </div>
+                    <div class="service-content">
+                        <h3>Scalp Therapy</h3>
+                        <p>Detox and nourish your scalp for healthier hair growth</p>
+                        <div class="service-price">Starting at ₹2,000</div>
+                    </div>
+                </div>
+                
+                <!-- Specialty Services -->
+                <div class="service-card" data-category="specialty">
+                    <div class="service-icon">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Bridal Styling</h3>
+                        <p>Complete bridal hair packages with trials and on-site service</p>
+                        <div class="service-price">Starting at ₹8,000</div>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-category="specialty">
+                    <div class="service-icon">
+                        <i class="fas fa-pen-nib"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Hair Tattoo Art</h3>
+                        <p>Precision clipper designs and creative undercut artistry</p>
+                        <div class="service-price">Starting at ₹1,500</div>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-category="specialty">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Style Consultation</h3>
+                        <p>Personalized style analysis and transformation planning</p>
+                        <div class="service-price">Starting at ₹1,000</div>
                     </div>
                 </div>
             </div>
             
-            <div class="menu-footer">
-                <a href="#" class="btn btn-primary">
-                    <i class="fas fa-download"></i> Download Full Menu (PDF)
+            <div class="services-cta">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-calendar-alt"></i> Schedule Consultation
                 </a>
             </div>
         </div>
@@ -260,140 +279,49 @@
     <section id="gallery" class="section gallery">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Gallery</h2>
-                <p class="section-subtitle">A glimpse into the Nexus experience</p>
+                <h2 class="section-title">Our Gallery</h2>
+                <p class="section-subtitle">Visual journey through our craft and ambiance</p>
             </div>
             
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80" alt="Dining Area" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" alt="Salon Styling" loading="lazy">
                     <div class="gallery-overlay">
-                        <h4>Elegant Dining</h4>
+                        <div class="gallery-caption">
+                            <h4>Precision Cutting</h4>
+                            <p>Masterful techniques</p>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Open Kitchen" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" alt="Color Work" loading="lazy">
                     <div class="gallery-overlay">
-                        <h4>Open Kitchen</h4>
+                        <div class="gallery-caption">
+                            <h4>Color Mastery</h4>
+                            <p>Artistic balayage</p>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1554679665-f5537f187268?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Private Dining" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" alt="Bridal Styling" loading="lazy">
                     <div class="gallery-overlay">
-                        <h4>Private Events</h4>
+                        <div class="gallery-caption">
+                            <h4>Bridal Elegance</h4>
+                            <p>Wedding perfection</p>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?ixlib=rb-4.0.3&auto=format&fit=crop&w=2080&q=80" alt="Food Presentation" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1560851248-7a2a48efb433?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" alt="Salon Interior" loading="lazy">
                     <div class="gallery-overlay">
-                        <h4>Artistic Plating</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reservation Section -->
-    <section id="reservation" class="section reservation">
-        <div class="container">
-            <div class="reservation-content">
-                <div class="reservation-text">
-                    <h2 class="section-title">Book Your Table</h2>
-                    <p class="section-subtitle">Secure your spot for an unforgettable dining experience</p>
-                    
-                    <div class="reservation-features">
-                        <div class="feature-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h4>Open Hours</h4>
-                                <p>Mon-Thu: 11AM - 11PM</p>
-                                <p>Fri-Sun: 11AM - 12AM</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Call Us</h4>
-                                <p>+91 79091 03947</p>
-                                <p>Available 10AM - 11PM</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <i class="fas fa-users"></i>
-                            <div>
-                                <h4>Group Bookings</h4>
-                                <p>Special arrangements for parties of 8+</p>
-                                <p>Private dining available</p>
-                            </div>
+                        <div class="gallery-caption">
+                            <h4>Our Sanctuary</h4>
+                            <p>Elegant ambiance</p>
                         </div>
                     </div>
-                </div>
-                
-                <div class="reservation-form">
-                    <form id="bookingForm">
-                        <div class="form-group">
-                            <input type="text" placeholder="Full Name" required>
-                            <i class="fas fa-user"></i>
-                        </div>
-                        
-                        <div class="form-group">
-                            <input type="email" placeholder="Email Address" required>
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        
-                        <div class="form-group">
-                            <input type="tel" placeholder="Phone Number" required>
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="date" required>
-                                <i class="fas fa-calendar"></i>
-                            </div>
-                            
-                            <div class="form-group">
-                                <select required>
-                                    <option value="" disabled selected>Time</option>
-                                    <option>18:00</option>
-                                    <option>18:30</option>
-                                    <option>19:00</option>
-                                    <option>19:30</option>
-                                    <option>20:00</option>
-                                    <option>20:30</option>
-                                    <option>21:00</option>
-                                </select>
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            
-                            <div class="form-group">
-                                <select required>
-                                    <option value="" disabled selected>Guests</option>
-                                    <option>1 Person</option>
-                                    <option>2 People</option>
-                                    <option>3 People</option>
-                                    <option>4 People</option>
-                                    <option>5 People</option>
-                                    <option>6 People</option>
-                                    <option>7+ People</option>
-                                </select>
-                                <i class="fas fa-user-friends"></i>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <textarea placeholder="Special Requests (Dietary, Occasion, etc.)" rows="3"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-check-circle"></i> Confirm Booking
-                        </button>
-                    </form>
                 </div>
             </div>
         </div>
@@ -403,8 +331,8 @@
     <section id="contact" class="section contact">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Visit Us</h2>
-                <p class="section-subtitle">We'd love to welcome you</p>
+                <h2 class="section-title">Visit Our Studio</h2>
+                <p class="section-subtitle">Book your transformation with us</p>
             </div>
             
             <div class="contact-content">
@@ -413,11 +341,11 @@
                         <div class="info-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <div>
-                            <h4>Location</h4>
-                            <p>123 Gourmet Avenue</p>
-                            <p>Mumbai, India 400001</p>
-                            <a href="#" class="link">Get Directions →</a>
+                        <div class="info-details">
+                            <h4>Our Location</h4>
+                            <p>Luxury Style District</p>
+                            <p>123 Fashion Street, Mumbai</p>
+                            <a href="#" class="info-link">Get Directions →</a>
                         </div>
                     </div>
                     
@@ -425,11 +353,11 @@
                         <div class="info-icon">
                             <i class="fas fa-phone"></i>
                         </div>
-                        <div>
-                            <h4>Phone</h4>
+                        <div class="info-details">
+                            <h4>Contact Us</h4>
                             <p>+91 79091 03947</p>
-                            <p>Mon-Sun: 10AM - 11PM</p>
-                            <a href="tel:+917909103947" class="link">Call Now →</a>
+                            <p>Mon-Sun: 10AM - 8PM</p>
+                            <a href="tel:+917909103947" class="info-link">Call Now →</a>
                         </div>
                     </div>
                     
@@ -437,21 +365,113 @@
                         <div class="info-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <div>
+                        <div class="info-details">
                             <h4>Email</h4>
-                            <p>reservations@nexus.in</p>
-                            <p>info@nexus.in</p>
-                            <a href="mailto:reservations@nexus.in" class="link">Send Email →</a>
+                            <p>appointments@trimtrend.com</p>
+                            <p>Response within 2 hours</p>
+                            <a href="mailto:appointments@trimtrend.com" class="info-link">Send Email →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="social-connect">
+                        <h4>Connect With Us</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="map-container">
-                    <div class="map-placeholder">
-                        <i class="fas fa-map-marked-alt"></i>
-                        <p>Interactive Map Location</p>
-                        <small>123 Gourmet Avenue, Mumbai</small>
+                <div class="contact-form">
+                    <div class="form-header">
+                        <h3>Book Your Appointment</h3>
+                        <p>Please fill the form below for scheduling</p>
                     </div>
+                    
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <div class="input-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <input type="text" placeholder="Full Name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="input-icon">
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                                <input type="date" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="input-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <select required>
+                                    <option value="" disabled selected>Preferred Time</option>
+                                    <option>10:00 AM</option>
+                                    <option>11:00 AM</option>
+                                    <option>12:00 PM</option>
+                                    <option>02:00 PM</option>
+                                    <option>03:00 PM</option>
+                                    <option>04:00 PM</option>
+                                    <option>05:00 PM</option>
+                                    <option>06:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-icon">
+                                <i class="fas fa-scissors"></i>
+                            </div>
+                            <select required>
+                                <option value="" disabled selected>Select Service</option>
+                                <option>Haircut & Styling</option>
+                                <option>Hair Coloring</option>
+                                <option>Keratin Treatment</option>
+                                <option>Bridal Package</option>
+                                <option>Scalp Therapy</option>
+                                <option>Consultation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-icon">
+                                <i class="fas fa-comment"></i>
+                            </div>
+                            <textarea placeholder="Special Requests or Notes" rows="3"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Confirm Booking
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -461,50 +481,47 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <i class="fas fa-utensils"></i>
-                    <h3>Nexus Restaurant</h3>
-                    <p>Crafting exceptional dining experiences since 2015</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-icon">✂️</span>
+                        <span class="logo-text">Trim & <span class="logo-accent">Trend</span></span>
                     </div>
+                    <p class="footer-tagline">Where elegance meets transformation</p>
+                    <p class="footer-description">Premium salon services in a sophisticated, client-focused environment.</p>
                 </div>
                 
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#menu">Menu</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#reservation">Reservation</a></li>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-hours">
-                    <h4>Opening Hours</h4>
+                    <h4>Operating Hours</h4>
                     <div class="hours">
                         <div class="hour-row">
-                            <span>Monday - Thursday</span>
-                            <span>11:00 AM - 11:00 PM</span>
+                            <span>Monday - Friday</span>
+                            <span>10:00 AM - 8:00 PM</span>
                         </div>
                         <div class="hour-row">
-                            <span>Friday - Saturday</span>
-                            <span>11:00 AM - 12:00 AM</span>
+                            <span>Saturday</span>
+                            <span>10:00 AM - 9:00 PM</span>
                         </div>
                         <div class="hour-row">
                             <span>Sunday</span>
-                            <span>11:00 AM - 10:00 PM</span>
+                            <span>11:00 AM - 7:00 PM</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="footer-newsletter">
                     <h4>Stay Updated</h4>
-                    <p>Subscribe for exclusive offers and events</p>
+                    <p>Subscribe for exclusive offers and style tips</p>
                     <form class="newsletter-form">
                         <input type="email" placeholder="Your email address" required>
                         <button type="submit">
@@ -515,14 +532,14 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Nexus Restaurant. All rights reserved.</p>
-                <p>Designed with <i class="fas fa-heart"></i> by Nexus Team</p>
+                <p>&copy; 2024 Trim & Trend. All rights reserved. | Crafted with <i class="fas fa-heart"></i> for beauty enthusiasts</p>
+                <p class="footer-note">By appointment only | Premium products used</p>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top -->
-    <a href="#home" class="back-to-top">
+    <a href="#hero" class="back-to-top">
         <i class="fas fa-chevron-up"></i>
     </a>
 
